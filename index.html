@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Multi Select</title>
+</head>
+<body ng-controller="ctrl">
+    <multi-select options="options" selection="selection"></multi-select>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script src="multiselect.js"></script>
+    <script>
+    (function(){
+        angular.module('app', ['multiselect'])
+        .controller('ctrl', function($scope){
+            $scope.selection = [];
+            $scope.options = [
+                {Name: 'Julian', Surname: 'Krispel-Samsel'}, 
+                {Name: 'Ed', Surname: 'Blake'}, 
+                {Name: 'Gareth', Surname: 'Repton'}
+            ];
+            console.log('init');
+        })
+    })();
+    </script>
+</body>
+</html>
